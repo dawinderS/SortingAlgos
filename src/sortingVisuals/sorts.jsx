@@ -18,7 +18,7 @@ export default class SortingVisuals extends React.Component {
   resetArr() {
     const arr = [];
     for (let i = 0; i < 100; i++) {
-      arr.push(randomVal(5, 1000));
+      arr.push(randomVal(50, 700));
     }
 
     this.setState({ arr });
@@ -30,8 +30,9 @@ export default class SortingVisuals extends React.Component {
     return (
       <div className='bar-show' >
         {arr.map((val, i) => (
-          <div className='arr-bars' key={i} >
-            {val}
+          <div className='arr-bars' 
+               key={i} 
+               style={{ height: `${val}px` }}>
           </div>
         ))}
       </div>

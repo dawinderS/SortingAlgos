@@ -1,0 +1,15 @@
+.bar-show {
+  /* position: absolute;
+  left: 100px; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* flex-direction: column; */
+}
+
+.arr-bars {
+  width: 3px;
+  margin: 0 1.5px;
+  background: lightblue;
+}
