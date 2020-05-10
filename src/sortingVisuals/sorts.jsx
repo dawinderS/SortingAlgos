@@ -19,6 +19,7 @@ export default class SortingVisuals extends React.Component {
     const arr = [];
     for (let i = 0; i < 100; i++) {
       arr.push(randomVal(50, 700));
+      
     }
 
     this.setState({ arr });
