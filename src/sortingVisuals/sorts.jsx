@@ -18,8 +18,8 @@ export default class SortingVisuals extends React.Component {
   resetArr() {
     const arr = [];
     for (let i = 0; i < 100; i++) {
-      arr.push(randomVal(50, 700));
-      
+      arr.push(randomVal(50, 650));
+
     }
 
     this.setState({ arr });

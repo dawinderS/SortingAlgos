@@ -1,6 +1,10 @@
 .App {
   text-align: center;
-  width: 100vh;
+  width: 95vw;
+}
+
+html {
+  width: 95vw;
 }
 
 .App-logo {
