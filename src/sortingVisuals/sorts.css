@@ -1,25 +1,25 @@
+.mainpage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
 .bar-show {
   /* position: absolute;
   left: 100px; */
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* flex-direction: column; */
 }
 
 .arr-bars {
-  width: 5px;
-  margin: 0 1.5px;
-  background: lightblue;
+  /* min-width: 2px; */
+  margin: 0 1px;
+  background: blue;
 }
 
 #root {
-  width: 100%;
   justify-content: center;
   padding: 0;
-}
-
-.App {
-  width: 95vw;
 }
