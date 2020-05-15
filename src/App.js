@@ -6,7 +6,7 @@ import SortingVisuals from './sortingVisuals/sorts';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" id='app'>
       <SortingVisuals></SortingVisuals>
     </div>
   );

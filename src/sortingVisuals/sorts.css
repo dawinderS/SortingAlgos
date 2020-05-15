@@ -1,25 +1,34 @@
 .mainpage {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
   width: 100vw;
+  height: 100vh;
+  background: black;
+  background: #212121;
+}
+
+.all-btns {
+  display: flex;
+  flex-direction: column;
+  width: 17%;
+  min-width: 200px;
+  background: teal;
+  /* background: turquoise; */
+  /* border-right: 1px solid whitesmoke; */
+  /* margin-bottom: 1vh; */
 }
 
 .bar-show {
-  /* position: absolute;
-  left: 100px; */
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
+  width: 83%;
+  margin-bottom: 1.5vh;
 }
 
 .arr-bars {
-  /* min-width: 2px; */
-  margin: 0 1px;
-  background: blue;
-}
-
-#root {
-  justify-content: center;
-  padding: 0;
+  width: 1px;
+  margin: 0 2px;
+  background: turquoise;
+  /* background: #7ffdfd; */
 }
