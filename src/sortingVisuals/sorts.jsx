@@ -7,11 +7,8 @@ import { insertionSortAnimations } from "../sortingAlgs/insertionSort";
 import { selectionSortAnimations } from '../sortingAlgs/selectionSort';
 
 const ANIMATION_SPEED_MS = 5;
-
-const NUM_OF_BARS = 250;
-
+// const NUM_OF_BARS = 250;
 const PRIMARY_COLOR = 'turquoise';
-
 const SECONDARY_COLOR = 'rgb(255, 0, 0)';
 
 export default class SortingVisuals extends React.Component {
@@ -32,8 +29,8 @@ export default class SortingVisuals extends React.Component {
     const BARS = document.getElementById("barshow").clientWidth;
     const HEIGHT = document.getElementById('app').clientHeight;
     const arr = [];
-    for (let i = 0; i < BARS * 0.18; i++) {
-      arr.push(randomVal(15, HEIGHT * 0.75));
+    for (let i = 0; i < BARS * 0.182; i++) {
+      arr.push(randomVal(15, HEIGHT * 0.70));
     }
 
     this.setState({ arr });
@@ -64,7 +61,7 @@ export default class SortingVisuals extends React.Component {
   }
 
   quickSort() {
-    const [animations,sortArray] = quickSortAnimations(this.state.arr);
+    const [animations] = quickSortAnimations(this.state.arr);
     for (let i = 0; i < animations.length - 1; i++) {
       const isColorChange = (i % 6 === 0) || (i % 6 === 1);
       const arrayBars = document.getElementsByClassName('arr-bars');
@@ -102,7 +99,7 @@ export default class SortingVisuals extends React.Component {
   }
 
   bubbleSort() {
-    const [animations,sortArray] = bubbleSortAnimations(this.state.arr);
+    const [animations] = bubbleSortAnimations(this.state.arr);
     for (let i = 0; i < animations.length; i++) {
       const isColorChange = (i % 4 === 0) || (i % 4 === 1);
       const arrayBars = document.getElementsByClassName('arr-bars');
@@ -130,7 +127,7 @@ export default class SortingVisuals extends React.Component {
   }
 
   insertionSort() {
-    const [animations,sortArray] = insertionSortAnimations(this.state.arr);
+    const [animations] = insertionSortAnimations(this.state.arr);
     for (let i = 0; i < animations.length; i++) {
       const isColorChange = (animations[i][0] === "comparision1") || (animations[i][0] === "comparision2");
       const arrayBars = document.getElementsByClassName('arr-bars');
@@ -184,23 +181,33 @@ export default class SortingVisuals extends React.Component {
 
     return (
       <div className='mainpage' >
-        <div className='all-btns'>
-          <button onClick={ () => this.resetArr() }>Randomize Array</button>
-          <button onClick={ () => this.mergeSort() }>Merge Sort</button>
-          <button onClick={ () => this.quickSort() }>Quick Sort</button>
-          <button onClick={ () => this.heapSort() }>Heap Sort</button>
-          <button onClick={ () => this.bubbleSort() }>Bubble Sort</button>
-          <button onClick={ () => this.insertionSort() }>Insertion Sort</button>
-          <button onClick={ () => this.selectionSort() }>Selection Sort</button>
+        <div className='navbar'>
+          <div className='navbar-header'>
+            d
+          </div>
+          <div >
+            <button onClick={ () => this.resetArr() }>Randomize Array</button>
+            <button onClick={ () => this.mergeSort() }>Merge Sort</button>
+            <button onClick={ () => this.quickSort() }>Quick Sort</button>
+            {/* <button onClick={ () => this.heapSort() }>Heap Sort</button> */}
+            <button onClick={ () => this.bubbleSort() }>Bubble Sort</button>
+            <button onClick={ () => this.insertionSort() }>Insertion Sort</button>
+            <button onClick={ () => this.selectionSort() }>Selection Sort</button>
+          </div>
 
         </div>
-        <div className='bar-show' id='barshow'>
-          {arr.map((val, i) => (
-            <div className='arr-bars' 
-                key={i} 
-                style={{ height: `${val}px` }} >
-            </div>
-          ))}
+        <div className='barshow1'>
+          <div className='info-show' style={{ height: '${}'}}>
+            sdfsdf
+          </div>
+          <div className='bar-show' id='barshow'>
+            {arr.map((val, i) => (
+              <div className='arr-bars' 
+                  key={i} 
+                  style={{ height: `${val}px` }} >
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     )

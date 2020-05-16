@@ -52,15 +52,3 @@ function swap(auxillaryArray, firstIndex, secondIndex) {
   auxillaryArray[firstIndex] = auxillaryArray[secondIndex];
   auxillaryArray[secondIndex] = temp;
 }
-
-function arraysAreEqual(firstArray, secondArray) {
-  if (firstArray.length !== secondArray.length) {
-    return false;
-  }
-  for (let i = 0; i < firstArray.length; i++) {
-    if (firstArray[i] !== secondArray[i]) {
-      return false;
-    }
-  }
-  return true;
-}

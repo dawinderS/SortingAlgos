@@ -7,23 +7,41 @@
   background: #212121;
 }
 
-.all-btns {
+.navbar {
   display: flex;
   flex-direction: column;
-  width: 17%;
+  width: 16%;
   min-width: 200px;
   background: teal;
-  /* background: turquoise; */
-  /* border-right: 1px solid whitesmoke; */
+  border-right: 3px solid grey;
   /* margin-bottom: 1vh; */
+}
+
+.navbar-header {
+  height: 23vh;
+  background: #212121;
+  border-bottom: 3px solid grey;
+
+}
+
+.barshow1 {
+  display: flex;
+  justify-content: space-between;
+  width: 84%;
+  margin-bottom: 1vh;
+  flex-direction: column;
 }
 
 .bar-show {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 83%;
-  margin-bottom: 1vh;
+}
+
+.info-show {
+  height: 23vh;
+  background: teal;
+  border-bottom: 3px solid grey;
 }
 
 .arr-bars {
