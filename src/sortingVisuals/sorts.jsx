@@ -130,11 +130,53 @@ export default class SortingVisuals extends React.Component {
   }
 
   insertionSort() {
-    
+    const [animations,sortArray] = insertionSortAnimations(this.state.arr);
+    for (let i = 0; i < animations.length; i++) {
+      const isColorChange = (animations[i][0] === "comparision1") || (animations[i][0] === "comparision2");
+      const arrayBars = document.getElementsByClassName('arr-bars');
+      if(isColorChange === true) {
+        const color = (animations[i][0] === "comparision1") ? SECONDARY_COLOR : PRIMARY_COLOR;
+        const [temp, barOneIndex, barTwoIndex] = animations[i];
+        const barOneStyle = arrayBars[barOneIndex].style;
+        const barTwoStyle = arrayBars[barTwoIndex].style;
+        setTimeout(() => {
+          barOneStyle.backgroundColor = color;
+          barTwoStyle.backgroundColor = color;
+        },i * ANIMATION_SPEED_MS * 0.7);
+      }
+      else {
+        const [temp, barIndex, newHeight] = animations[i];
+        const barStyle = arrayBars[barIndex].style;
+        setTimeout(() => {
+          barStyle.height = `${newHeight}px`;
+        },i * ANIMATION_SPEED_MS * 0.7);  
+      }
+    }
   }
 
   selectionSort() {
-
+    const [animations,sortArray] = selectionSortAnimations(this.state.arr);
+    for (let i = 0; i < animations.length; i++) {
+      const isColorChange = (animations[i][0] === "comparision1") || (animations[i][0] === "comparision2");
+      const arrayBars = document.getElementsByClassName('arr-bars');
+      if(isColorChange === true) {
+        const color = (animations[i][0] === "comparision1") ? SECONDARY_COLOR : PRIMARY_COLOR;
+        const [temp, barOneIndex, barTwoIndex] = animations[i];
+        const barOneStyle = arrayBars[barOneIndex].style;
+        const barTwoStyle = arrayBars[barTwoIndex].style;
+        setTimeout(() => {
+          barOneStyle.backgroundColor = color;
+          barTwoStyle.backgroundColor = color;
+        },i * ANIMATION_SPEED_MS * 0.7);
+      }
+      else {
+        const [temp, barIndex, newHeight] = animations[i];
+        const barStyle = arrayBars[barIndex].style;
+        setTimeout(() => {
+          barStyle.height = `${newHeight}px`;
+        },i * ANIMATION_SPEED_MS * 0.7);  
+      }
+    }
   }
 
   render() {
