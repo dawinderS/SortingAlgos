@@ -2,7 +2,9 @@ import React from 'react';
 import './sorts.css'
 import { mergeSortAnimations } from '../sortingAlgs/mergeSort';
 import { quickSortAnimations } from '../sortingAlgs/quickSort';
-import { bubbleSortAnimations } from '../sortingAlgs/'
+import { bubbleSortAnimations } from '../sortingAlgs/bubbleSort';
+import { insertionSortAnimations } from "../sortingAlgs/insertionSort";
+import { selectionSortAnimations } from '../sortingAlgs/selectionSort';
 
 const ANIMATION_SPEED_MS = 5;
 
@@ -32,7 +34,6 @@ export default class SortingVisuals extends React.Component {
     const arr = [];
     for (let i = 0; i < BARS * 0.18; i++) {
       arr.push(randomVal(15, HEIGHT * 0.75));
-
     }
 
     this.setState({ arr });
@@ -113,7 +114,7 @@ export default class SortingVisuals extends React.Component {
         setTimeout(() => {
             barOneStyle.backgroundColor = color;
             barTwoStyle.backgroundColor = color;
-        },i * ANIMATION_SPEED_MS);
+        },i * ANIMATION_SPEED_MS * 0.5);
       }
       else {
         const [barIndex, newHeight] = animations[i];
@@ -123,9 +124,17 @@ export default class SortingVisuals extends React.Component {
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
             barStyle.height = `${newHeight}px`;
-        },i * ANIMATION_SPEED_MS);  
+        },i * ANIMATION_SPEED_MS * 0.5);  
       }
     }
+  }
+
+  insertionSort() {
+    
+  }
+
+  selectionSort() {
+
   }
 
   render() {
@@ -139,6 +148,8 @@ export default class SortingVisuals extends React.Component {
           <button onClick={ () => this.quickSort() }>Quick Sort</button>
           <button onClick={ () => this.heapSort() }>Heap Sort</button>
           <button onClick={ () => this.bubbleSort() }>Bubble Sort</button>
+          <button onClick={ () => this.insertionSort() }>Insertion Sort</button>
+          <button onClick={ () => this.selectionSort() }>Selection Sort</button>
 
         </div>
         <div className='bar-show' id='barshow'>
