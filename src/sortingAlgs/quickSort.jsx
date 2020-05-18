@@ -23,11 +23,10 @@ function partitionArray(auxillaryArray, startIndex, endIndex, animations) {
     animations.push([i, endIndex]);
     animations.push([i, endIndex]);
     if (auxillaryArray[i] <= pivot) {
-        //Swap these two heights
-        animations.push([i, auxillaryArray[pivotIndex]]);
-        animations.push([pivotIndex, auxillaryArray[i]]);
-        swap(auxillaryArray, i , pivotIndex);
-        pivotIndex++;
+      animations.push([i, auxillaryArray[pivotIndex]]);
+      animations.push([pivotIndex, auxillaryArray[i]]);
+      swap(auxillaryArray, i , pivotIndex);
+      pivotIndex++;
     }
     else {
         animations.push([-1, -1]);
@@ -40,7 +39,7 @@ function partitionArray(auxillaryArray, startIndex, endIndex, animations) {
   animations.push([-1, -1]);
   animations.push([-1, -1]);
   animations.push([-1, -1]);
-  //Swap these two heights
+  
   animations.push([pivotIndex, auxillaryArray[endIndex]]);
   animations.push([endIndex, auxillaryArray[pivotIndex]]);
   swap(auxillaryArray, pivotIndex, endIndex);

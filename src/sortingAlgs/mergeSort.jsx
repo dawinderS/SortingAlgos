@@ -7,13 +7,7 @@ export function mergeSortAnimations(arr) {
   return animations;
 }
 
-function mergeSortHelper(
-  mainArray,
-  startIdx,
-  endIdx,
-  auxiliaryArray,
-  animations,
-) {
+function mergeSortHelper(mainArray, startIdx, endIdx, auxiliaryArray, animations) {
   if (startIdx === endIdx) return;
   const middleIdx = Math.floor((startIdx + endIdx) / 2);
   mergeSortHelper(auxiliaryArray, startIdx, middleIdx, mainArray, animations);
@@ -21,14 +15,7 @@ function mergeSortHelper(
   doMerge(mainArray, startIdx, middleIdx, endIdx, auxiliaryArray, animations);
 }
 
-function doMerge(
-  mainArray,
-  startIdx,
-  middleIdx,
-  endIdx,
-  auxiliaryArray,
-  animations,
-) {
+function doMerge(mainArray, startIdx, middleIdx, endIdx, auxiliaryArray, animations) {
   let k = startIdx;
   let i = startIdx;
   let j = middleIdx + 1;

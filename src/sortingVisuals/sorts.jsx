@@ -5,6 +5,8 @@ import { quickSortAnimations } from '../sortingAlgs/quickSort';
 import { bubbleSortAnimations } from '../sortingAlgs/bubbleSort';
 import { insertionSortAnimations } from "../sortingAlgs/insertionSort";
 import { selectionSortAnimations } from '../sortingAlgs/selectionSort';
+import githubLogo from '../github-logo.png';
+import linkedinLogo from '../linkedin-logo.png';
 
 const ANIMATION_SPEED_MS = 5;
 // const NUM_OF_BARS = 250;
@@ -14,11 +16,9 @@ const SECONDARY_COLOR = 'rgb(255, 0, 0)';
 export default class SortingVisuals extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       arr: []
     };
-
   }
 
   componentDidMount() {
@@ -68,24 +68,20 @@ export default class SortingVisuals extends React.Component {
       if (isColorChange) {
         const color = (i % 6 === 0) ? SECONDARY_COLOR : PRIMARY_COLOR;
         const [barOneIndex, barTwoIndex] = animations[i];
-        if(barOneIndex === -1) {
-            continue;
-        }
+        if(barOneIndex === -1) continue;
         const barOneStyle = arrayBars[barOneIndex].style;
         const barTwoStyle = arrayBars[barTwoIndex].style;
         setTimeout(() => {
-            barOneStyle.backgroundColor = color;
-            barTwoStyle.backgroundColor = color;
+          barOneStyle.backgroundColor = color;
+          barTwoStyle.backgroundColor = color;
         },i * ANIMATION_SPEED_MS);
       }
       else {
         const [barIndex, newHeight] = animations[i];
-        if (barIndex === -1) {
-            continue;
-        }
+        if (barIndex === -1) continue;
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
-            barStyle.height = `${newHeight}px`;
+          barStyle.height = `${newHeight}px`;
         },i * ANIMATION_SPEED_MS);  
       }
     }
@@ -109,18 +105,16 @@ export default class SortingVisuals extends React.Component {
         const barOneStyle = arrayBars[barOneIndex].style;
         const barTwoStyle = arrayBars[barTwoIndex].style;
         setTimeout(() => {
-            barOneStyle.backgroundColor = color;
-            barTwoStyle.backgroundColor = color;
+          barOneStyle.backgroundColor = color;
+          barTwoStyle.backgroundColor = color;
         },i * ANIMATION_SPEED_MS * 0.5);
       }
       else {
         const [barIndex, newHeight] = animations[i];
-        if (barIndex === -1) {
-            continue;
-        }
+        if (barIndex === -1) continue;
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
-            barStyle.height = `${newHeight}px`;
+          barStyle.height = `${newHeight}px`;
         },i * ANIMATION_SPEED_MS * 0.5);  
       }
     }
@@ -180,57 +174,72 @@ export default class SortingVisuals extends React.Component {
     const { arr } = this.state;
 
     return (
-      <div className='mainpage' >
-        <div className='navbar'>
-          <div className='navbar-header'>
-            Sorting Algorithms Explained!
-          </div>
-          <div className='navbar-btns' >
-            <div className='navbar-btns-in'>
-              <div className='reset-btn' onClick={ () => this.resetArr() }>Randomize Array / Reset</div>
-              <div>
+      <div className="mainpage">
+        <div className="navbar">
+          <div className="navbar-header">Sorting Algorithms Explained!</div>
+          <div className="navbar-btns">
+            <div className="navbar-btns-in">
+              <div className="reset-btn" onClick={() => this.resetArr()}>
+                Randomize Array / Reset
+              </div>
+              <div className="array-size">
                 1. Choose array size
                 <span>
-                  <div>1x</div>
-                  <div>2x</div>
-                  <div>3x</div>
+                  <div id="arrsize1">S</div>
+                  <div id="arrsize2">M</div>
+                  <div id="arrsize3">L</div>
                 </span>
               </div>
-              <div>
+              <div className='sort-speed'>
                 2. Select sorting speed
                 <span>
-                  <div>1x</div>
-                  <div>2x</div>
-                  <div>3x</div>
+                  <div id="sortspeed1">1x</div>
+                  <div id="sortspeed2">2x</div>
+                  <div id="sortspeed3">3x</div>
                 </span>
               </div>
-              <div>
+              <div className='sort-algs'>
                 3. Pick a sorting algorithm
-                <div onClick={ () => this.mergeSort() }>Merge Sort</div>
-                <div onClick={ () => this.quickSort() }>Quick Sort</div>
+                <div onClick={() => this.mergeSort()}>Merge Sort</div>
+                <div onClick={() => this.quickSort()}>Quick Sort</div>
                 {/* <button onClick={ () => this.heapSort() }>Heap Sort</button> */}
-                <div onClick={ () => this.bubbleSort() }>Bubble Sort</div>
-                <div onClick={ () => this.insertionSort() }>Insertion Sort</div>
-                <div onClick={ () => this.selectionSort() }>Selection Sort</div>
+                <div onClick={() => this.bubbleSort()}>Bubble Sort</div>
+                <div onClick={() => this.insertionSort()}>Insertion Sort</div>
+                <div onClick={() => this.selectionSort()}>Selection Sort</div>
+              </div>
+              <div className="navbar-links">
+                <a
+                  target="_blank"
+                  href="https://github.com/dawinderS/StatsDontLie"
+                >
+                  <img src={githubLogo} alt="Github" />
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/dawinder-singh/"
+                >
+                  <img src={linkedinLogo} alt="LinkedIn" />
+                </a>
               </div>
             </div>
           </div>
         </div>
-        <div className='barshow1'>
-          <div className='info-show' style={{ height: '${}'}}>
+        <div className="barshow1">
+          <div className="info-show" style={{ height: "${}" }}>
             sdfsdf
           </div>
-          <div className='bar-show' id='barshow'>
+          <div className="bar-show" id="barshow">
             {arr.map((val, i) => (
-              <div className='arr-bars' 
-                  key={i} 
-                  style={{ height: `${val}px` }} >
-              </div>
+              <div
+                className="arr-bars"
+                key={i}
+                style={{ height: `${val}px` }}
+              ></div>
             ))}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
