@@ -30,7 +30,7 @@ export default class SortingVisuals extends React.Component {
     const HEIGHT = document.getElementById('app').clientHeight;
     const arr = [];
     for (let i = 0; i < BARS * 0.182; i++) {
-      arr.push(randomVal(15, HEIGHT * 0.70));
+      arr.push(randomVal(15, HEIGHT * 0.72));
     }
 
     this.setState({ arr });
@@ -183,18 +183,38 @@ export default class SortingVisuals extends React.Component {
       <div className='mainpage' >
         <div className='navbar'>
           <div className='navbar-header'>
-            d
+            Sorting Algorithms Explained!
           </div>
-          <div >
-            <button onClick={ () => this.resetArr() }>Randomize Array</button>
-            <button onClick={ () => this.mergeSort() }>Merge Sort</button>
-            <button onClick={ () => this.quickSort() }>Quick Sort</button>
-            {/* <button onClick={ () => this.heapSort() }>Heap Sort</button> */}
-            <button onClick={ () => this.bubbleSort() }>Bubble Sort</button>
-            <button onClick={ () => this.insertionSort() }>Insertion Sort</button>
-            <button onClick={ () => this.selectionSort() }>Selection Sort</button>
+          <div className='navbar-btns' >
+            <div className='navbar-btns-in'>
+              <div className='reset-btn' onClick={ () => this.resetArr() }>Randomize Array / Reset</div>
+              <div>
+                1. Choose array size
+                <span>
+                  <div>1x</div>
+                  <div>2x</div>
+                  <div>3x</div>
+                </span>
+              </div>
+              <div>
+                2. Select sorting speed
+                <span>
+                  <div>1x</div>
+                  <div>2x</div>
+                  <div>3x</div>
+                </span>
+              </div>
+              <div>
+                3. Pick a sorting algorithm
+                <div onClick={ () => this.mergeSort() }>Merge Sort</div>
+                <div onClick={ () => this.quickSort() }>Quick Sort</div>
+                {/* <button onClick={ () => this.heapSort() }>Heap Sort</button> */}
+                <div onClick={ () => this.bubbleSort() }>Bubble Sort</div>
+                <div onClick={ () => this.insertionSort() }>Insertion Sort</div>
+                <div onClick={ () => this.selectionSort() }>Selection Sort</div>
+              </div>
+            </div>
           </div>
-
         </div>
         <div className='barshow1'>
           <div className='info-show' style={{ height: '${}'}}>
