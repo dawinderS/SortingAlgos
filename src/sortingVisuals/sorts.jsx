@@ -30,7 +30,7 @@ export default class SortingVisuals extends React.Component {
     const HEIGHT = document.getElementById('app').clientHeight;
     const arr = [];
     for (let i = 0; i < BARS * 0.182; i++) {
-      arr.push(randomVal(15, HEIGHT * 0.72));
+      arr.push(randomVal(15, HEIGHT * 0.71));
     }
 
     this.setState({ arr });
@@ -170,13 +170,71 @@ export default class SortingVisuals extends React.Component {
     }
   }
 
+  handleSizeS() {
+    let sizeBtns = document.getElementsByClassName('arrsize');
+    let sizeS = document.getElementById('arrsize1');
+
+    for (let i = 0; i < sizeBtns.length; i++) {
+      sizeBtns[i].style.backgroundColor = 'teal'
+    }
+    sizeS.style.backgroundColor = "rgb(0, 77, 77)";
+  }
+  handleSizeM() {
+    let sizeBtns = document.getElementsByClassName("arrsize");
+    let sizeM = document.getElementById("arrsize2");
+
+    for (let i = 0; i < sizeBtns.length; i++) {
+      sizeBtns[i].style.backgroundColor = "teal";
+    }
+    sizeM.style.backgroundColor = "rgb(0, 77, 77)";
+  }
+  handleSizeL() {
+    let sizeBtns = document.getElementsByClassName("arrsize");
+    let sizeL = document.getElementById("arrsize3");
+
+    for (let i = 0; i < sizeBtns.length; i++) {
+      sizeBtns[i].style.backgroundColor = "teal";
+    }
+    sizeL.style.backgroundColor = "rgb(0, 77, 77)";
+  }
+  handleSpeed1() {
+    let speedBtns = document.getElementsByClassName("sortspeed");
+    let speed1 = document.getElementById("sortspeed1");
+
+    for (let i = 0; i < speedBtns.length; i++) {
+      speedBtns[i].style.backgroundColor = "teal";
+    }
+    speed1.style.backgroundColor = "rgb(0, 77, 77)";
+  }
+  handleSpeed2() {
+    let speedBtns = document.getElementsByClassName("sortspeed");
+    let speed2 = document.getElementById("sortspeed2");
+
+    for (let i = 0; i < speedBtns.length; i++) {
+      speedBtns[i].style.backgroundColor = "teal";
+    }
+    speed2.style.backgroundColor = "rgb(0, 77, 77)";
+  }
+  handleSpeed3() {
+    let speedBtns = document.getElementsByClassName("sortspeed");
+    let speed3 = document.getElementById("sortspeed3");
+
+    for (let i = 0; i < speedBtns.length; i++) {
+      speedBtns[i].style.backgroundColor = "teal";
+    }
+    speed3.style.backgroundColor = "rgb(0, 77, 77)";
+  }
+
   render() {
     const { arr } = this.state;
 
     return (
       <div className="mainpage">
         <div className="navbar">
-          <div className="navbar-header">Sorting Algorithms Explained!</div>
+          <div className="navbar-header">
+            <div>Sorting</div>
+            <span>Algos 101</span>
+          </div>
           <div className="navbar-btns">
             <div className="navbar-btns-in">
               <div className="reset-btn" onClick={() => this.resetArr()}>
@@ -185,32 +243,98 @@ export default class SortingVisuals extends React.Component {
               <div className="array-size">
                 1. Choose array size
                 <span>
-                  <div id="arrsize1">S</div>
-                  <div id="arrsize2">M</div>
-                  <div id="arrsize3">L</div>
+                  <div
+                    onClick={() => this.handleSizeS()}
+                    className="arrsize"
+                    id="arrsize1"
+                  >
+                    S
+                  </div>
+                  <div
+                    onClick={() => this.handleSizeM()}
+                    className="arrsize"
+                    id="arrsize2"
+                  >
+                    M
+                  </div>
+                  <div
+                    onClick={() => this.handleSizeL()}
+                    className="arrsize"
+                    id="arrsize3"
+                  >
+                    L
+                  </div>
                 </span>
               </div>
-              <div className='sort-speed'>
+              <div className="sort-speed">
                 2. Select sorting speed
                 <span>
-                  <div id="sortspeed1">1x</div>
-                  <div id="sortspeed2">2x</div>
-                  <div id="sortspeed3">3x</div>
+                  <div
+                    onClick={() => this.handleSpeed1()}
+                    className="sortspeed"
+                    id="sortspeed1"
+                  >
+                    1x
+                  </div>
+                  <div
+                    onClick={() => this.handleSpeed2()}
+                    className="sortspeed"
+                    id="sortspeed2"
+                  >
+                    2x
+                  </div>
+                  <div
+                    onClick={() => this.handleSpeed3()}
+                    className="sortspeed"
+                    id="sortspeed3"
+                  >
+                    3x
+                  </div>
                 </span>
               </div>
-              <div className='sort-algs'>
+              <div className="sort-algs">
                 3. Pick a sorting algorithm
-                <div onClick={() => this.mergeSort()}>Merge Sort</div>
-                <div onClick={() => this.quickSort()}>Quick Sort</div>
-                {/* <button onClick={ () => this.heapSort() }>Heap Sort</button> */}
-                <div onClick={() => this.bubbleSort()}>Bubble Sort</div>
-                <div onClick={() => this.insertionSort()}>Insertion Sort</div>
-                <div onClick={() => this.selectionSort()}>Selection Sort</div>
+                <span className="sort-algs1">
+                  <div className="sorts" onClick={() => this.mergeSort()}>
+                    <div>Merge</div>
+                    <div>Sort</div>
+                  </div>
+                  <div className="separator"></div>
+                  <div className="sorts" onClick={() => this.quickSort()}>
+                    <div>Quick</div>
+                    <div>Sort</div>
+                  </div>
+                  <div className="separator"></div>
+                  <div className="sorts" onClick={() => this.bubbleSort()}>
+                    <div>Bubble</div>
+                    <div>Sort</div>
+                  </div>
+                </span>
+                <span className="sort-algs2">
+                  <div
+                    className="sorts"
+                    id="insertion"
+                    onClick={() => this.insertionSort()}
+                  >
+                    <div>Insertion</div>
+                    <div>Sort</div>
+                  </div>
+                  <div className="separator"></div>
+                  <div
+                    className="sorts"
+                    id="selection"
+                    onClick={() => this.selectionSort()}
+                  >
+                    <div>Selection</div>
+                    <div>Sort</div>
+                  </div>
+                  {/* <button onClick={ () => this.heapSort() }>Heap Sort</button> */}
+                </span>
               </div>
               <div className="navbar-links">
                 <a
                   target="_blank"
-                  href="https://github.com/dawinderS/StatsDontLie"
+                  href="https://github.com/dawinderS/sortingVisuals"
                 >
                   <img src={githubLogo} alt="Github" />
                 </a>
@@ -225,9 +349,7 @@ export default class SortingVisuals extends React.Component {
           </div>
         </div>
         <div className="barshow1">
-          <div className="info-show" style={{ height: "${}" }}>
-            sdfsdf
-          </div>
+          <div className="info-show">sdfsdf</div>
           <div className="bar-show" id="barshow">
             {arr.map((val, i) => (
               <div
