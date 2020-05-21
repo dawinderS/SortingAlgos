@@ -9,7 +9,8 @@ import githubLogo from '../github-logo.png';
 import linkedinLogo from '../linkedin-logo.png';
 
 const ANIMATION_SPEED_MS = 5;
-// const NUM_OF_BARS = 250;
+let animation_speed = 5;
+let end_sort = false;
 const PRIMARY_COLOR = 'turquoise';
 const SECONDARY_COLOR = 'rgb(255, 0, 0)';
 
@@ -29,7 +30,31 @@ export default class SortingVisuals extends React.Component {
     const BARS = document.getElementById("barshow").clientWidth;
     const HEIGHT = document.getElementById('app').clientHeight;
     const arr = [];
-    for (let i = 0; i < BARS * 0.182; i++) {
+    const btn1color = document.getElementById('arrsize1').style.backgroundColor;
+    const btn2color = document.getElementById('arrsize2').style.backgroundColor;
+    const btn3color = document.getElementById('arrsize3').style.backgroundColor;
+    let bars = BARS;
+    let arrbars = document.getElementsByClassName("arr-bars");
+
+    if (btn1color === "rgb(0, 77, 77)") {
+      for (let i = 0; i < arrbars.length; i++) {
+        arrbars[i].style.width = "100px";
+      }
+      bars /= 140;
+    } else if (btn2color === 'rgb(0, 77, 77)') {
+      // let length = bars / 30;
+      for (let i = 0; i < arrbars.length; i++) { 
+        arrbars[i].style.width = '30px'; 
+      }
+      bars /= 40;
+    } else if (btn3color === "rgb(0, 77, 77)") {
+      for (let i = 0; i < arrbars.length; i++) {
+        arrbars[i].style.width = "1px";
+      }
+      bars *= 0.182;
+    }
+
+    for (let i = 0; i < bars; i++) {
       arr.push(randomVal(15, HEIGHT * 0.71));
     }
 
@@ -39,6 +64,9 @@ export default class SortingVisuals extends React.Component {
   mergeSort() {
     const animations = mergeSortAnimations(this.state.arr);
     for (let i = 0; i < animations.length; i++) {
+      if (end_sort === true) {
+        return;
+      }
       const arrayBars = document.getElementsByClassName('arr-bars');
       const isColorChange = i % 3 !== 2;
       if (isColorChange) {
@@ -49,19 +77,20 @@ export default class SortingVisuals extends React.Component {
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
-        }, i * ANIMATION_SPEED_MS);
+        }, i * animation_speed);
       } else {
         setTimeout(() => {
           const [barOneIdx, newHeight] = animations[i];
           const barOneStyle = arrayBars[barOneIdx].style;
           barOneStyle.height = `${newHeight}px`;
-        }, i * ANIMATION_SPEED_MS);
+        }, i * animation_speed);
       }
     }
   }
 
   quickSort() {
     const [animations] = quickSortAnimations(this.state.arr);
+    let new_speed = 0;
     for (let i = 0; i < animations.length - 1; i++) {
       const isColorChange = (i % 6 === 0) || (i % 6 === 1);
       const arrayBars = document.getElementsByClassName('arr-bars');
@@ -74,7 +103,7 @@ export default class SortingVisuals extends React.Component {
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
-        },i * ANIMATION_SPEED_MS);
+        }, i * animation_speed * 0.6);
       }
       else {
         const [barIndex, newHeight] = animations[i];
@@ -82,7 +111,7 @@ export default class SortingVisuals extends React.Component {
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
           barStyle.height = `${newHeight}px`;
-        },i * ANIMATION_SPEED_MS);  
+        }, i * animation_speed * 0.6);  
       }
     }
     // this.setState({array: sortArray})
@@ -96,6 +125,10 @@ export default class SortingVisuals extends React.Component {
 
   bubbleSort() {
     const [animations] = bubbleSortAnimations(this.state.arr);
+    let new_speed = 0;
+    if (animation_speed === 5) {
+      animation_speed = animation_speed * 0.4;
+    }
     for (let i = 0; i < animations.length; i++) {
       const isColorChange = (i % 4 === 0) || (i % 4 === 1);
       const arrayBars = document.getElementsByClassName('arr-bars');
@@ -107,7 +140,7 @@ export default class SortingVisuals extends React.Component {
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
-        },i * ANIMATION_SPEED_MS * 0.5);
+        }, i * animation_speed * 0.5);
       }
       else {
         const [barIndex, newHeight] = animations[i];
@@ -115,7 +148,7 @@ export default class SortingVisuals extends React.Component {
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
           barStyle.height = `${newHeight}px`;
-        },i * ANIMATION_SPEED_MS * 0.5);  
+        }, i * animation_speed * 0.5);  
       }
     }
   }
@@ -133,20 +166,24 @@ export default class SortingVisuals extends React.Component {
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
-        },i * ANIMATION_SPEED_MS * 0.7);
+        }, i * animation_speed * 0.7);
       }
       else {
         const [temp, barIndex, newHeight] = animations[i];
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
           barStyle.height = `${newHeight}px`;
-        },i * ANIMATION_SPEED_MS * 0.7);  
+        }, i * animation_speed * 0.7);  
       }
     }
   }
 
   selectionSort() {
     const [animations,sortArray] = selectionSortAnimations(this.state.arr);
+    let new_speed = 0;
+    if (animation_speed === 5) {
+      animation_speed = animation_speed * 0.5
+    }
     for (let i = 0; i < animations.length; i++) {
       const isColorChange = (animations[i][0] === "comparision1") || (animations[i][0] === "comparision2");
       const arrayBars = document.getElementsByClassName('arr-bars');
@@ -158,14 +195,14 @@ export default class SortingVisuals extends React.Component {
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
-        },i * ANIMATION_SPEED_MS * 0.7);
+        }, i * animation_speed * 0.7);
       }
       else {
         const [temp, barIndex, newHeight] = animations[i];
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
           barStyle.height = `${newHeight}px`;
-        },i * ANIMATION_SPEED_MS * 0.7);  
+        }, i * animation_speed * 0.7);  
       }
     }
   }
@@ -173,20 +210,20 @@ export default class SortingVisuals extends React.Component {
   handleSizeS() {
     let sizeBtns = document.getElementsByClassName('arrsize');
     let sizeS = document.getElementById('arrsize1');
-
     for (let i = 0; i < sizeBtns.length; i++) {
       sizeBtns[i].style.backgroundColor = 'teal'
     }
     sizeS.style.backgroundColor = "rgb(0, 77, 77)";
+    this.resetArr();
   }
   handleSizeM() {
     let sizeBtns = document.getElementsByClassName("arrsize");
     let sizeM = document.getElementById("arrsize2");
-
     for (let i = 0; i < sizeBtns.length; i++) {
       sizeBtns[i].style.backgroundColor = "teal";
     }
     sizeM.style.backgroundColor = "rgb(0, 77, 77)";
+    this.resetArr();
   }
   handleSizeL() {
     let sizeBtns = document.getElementsByClassName("arrsize");
@@ -196,7 +233,9 @@ export default class SortingVisuals extends React.Component {
       sizeBtns[i].style.backgroundColor = "teal";
     }
     sizeL.style.backgroundColor = "rgb(0, 77, 77)";
+    this.resetArr();
   }
+
   handleSpeed1() {
     let speedBtns = document.getElementsByClassName("sortspeed");
     let speed1 = document.getElementById("sortspeed1");
@@ -205,6 +244,7 @@ export default class SortingVisuals extends React.Component {
       speedBtns[i].style.backgroundColor = "teal";
     }
     speed1.style.backgroundColor = "rgb(0, 77, 77)";
+    animation_speed = 350;
   }
   handleSpeed2() {
     let speedBtns = document.getElementsByClassName("sortspeed");
@@ -214,6 +254,7 @@ export default class SortingVisuals extends React.Component {
       speedBtns[i].style.backgroundColor = "teal";
     }
     speed2.style.backgroundColor = "rgb(0, 77, 77)";
+    animation_speed = 100;
   }
   handleSpeed3() {
     let speedBtns = document.getElementsByClassName("sortspeed");
@@ -223,6 +264,7 @@ export default class SortingVisuals extends React.Component {
       speedBtns[i].style.backgroundColor = "teal";
     }
     speed3.style.backgroundColor = "rgb(0, 77, 77)";
+    animation_speed = 5;
   }
 
   render() {
@@ -240,6 +282,7 @@ export default class SortingVisuals extends React.Component {
               <div className="reset-btn" onClick={() => this.resetArr()}>
                 Randomize Array / Reset
               </div>
+              <button onClick={() => this.handleEnd()}>aa</button>
               <div className="array-size">
                 1. Choose array size
                 <span>
@@ -261,6 +304,7 @@ export default class SortingVisuals extends React.Component {
                     onClick={() => this.handleSizeL()}
                     className="arrsize"
                     id="arrsize3"
+                    style={{ backgroundColor: "rgb(0, 77, 77)" }}
                   >
                     L
                   </div>
@@ -354,6 +398,7 @@ export default class SortingVisuals extends React.Component {
             {arr.map((val, i) => (
               <div
                 className="arr-bars"
+                id="arrbars"
                 key={i}
                 style={{ height: `${val}px` }}
               ></div>

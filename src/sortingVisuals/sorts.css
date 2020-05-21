@@ -87,6 +87,10 @@
 /* .array-size span div:hover {
   background: rgb(0, 107, 107);
 } */
+
+.arrsize {
+  background-color: rgb(0, 128, 128);
+}
 #arrsize1 {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -206,6 +210,8 @@
   align-items: flex-end;
   height: 77vh;
   margin-bottom: 1vh;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .info-show {
@@ -221,4 +227,3 @@
   background: turquoise;
   /* background: #7ffdfd; */
 }
-
