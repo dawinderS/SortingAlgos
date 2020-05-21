@@ -276,13 +276,26 @@ export default class SortingVisuals extends React.Component {
   handleSortStart() {
     document.getElementById("stopsort").style.display = 'flex';
     document.getElementById("allsortalgs").style.display = 'none';
+    document.getElementById("reset-btndup").style.display = 'inline';
+    document.getElementById("reset-btn").style.display = 'none';
+    document.getElementById("arr-sizesdup").style.display = 'flex';
+    document.getElementById("arr-sizes").style.display = 'none';
+    document.getElementById("sort-spddup").style.display = 'flex';
+    document.getElementById("sort-spd").style.display = 'none';
   }
   handleSortEnd() {
     document.getElementById("stopsort").style.display = "none";
     document.getElementById("allsortalgs").style.display = "inline";
+    document.getElementById("reset-btndup").style.display = "none";
+    document.getElementById("reset-btn").style.display = "inline";
+    document.getElementById("arr-sizesdup").style.display = "none";
+    document.getElementById("arr-sizes").style.display = "flex";
+    document.getElementById("sort-spddup").style.display = "none";
+    document.getElementById("sort-spd").style.display = "flex";
   }
   handleEnd() {
     window.location.reload();
+    
   }
 
   render() {
@@ -297,17 +310,16 @@ export default class SortingVisuals extends React.Component {
           </div>
           <div className="navbar-btns">
             <div className="navbar-btns-in">
-              <div className="reset-btn" onClick={() => this.resetArr()}>
+              <div className="reset-btn" id='reset-btn' onClick={() => this.resetArr()}>
+                Generate New Array
+              </div>
+              <div className="reset-btn" id='reset-btndup'>
                 Generate New Array
               </div>
               <div className="array-size">
                 1. Choose array size
-                <span>
-                  <div
-                    onClick={() => this.handleSizeS()}
-                    className="arrsize"
-                    id="arrsize1"
-                  >
+                <span id='arr-sizes'>
+                  <div onClick={() => this.handleSizeS()} className="arrsize" id="arrsize1">
                     S
                   </div>
                   <div
@@ -326,10 +338,28 @@ export default class SortingVisuals extends React.Component {
                     L
                   </div>
                 </span>
+                <span id='arr-sizesdup'>
+                  <div className="arrsize" id="arrsize1">
+                    S
+                  </div>
+                  <div
+                    className="arrsize"
+                    id="arrsize2"
+                  >
+                    M
+                  </div>
+                  <div
+                    className="arrsize"
+                    id="arrsize3"
+                    style={{ backgroundColor: "rgb(0, 77, 77)" }}
+                  >
+                    L
+                  </div>
+                </span>
               </div>
               <div className="sort-speed">
                 2. Select sorting speed
-                <span>
+                <span id='sort-spd'>
                   <div
                     onClick={() => this.handleSpeed1()}
                     className="sortspeed"
@@ -346,6 +376,26 @@ export default class SortingVisuals extends React.Component {
                   </div>
                   <div
                     onClick={() => this.handleSpeed3()}
+                    className="sortspeed"
+                    id="sortspeed3"
+                  >
+                    3x
+                  </div>
+                </span>
+                <span id='sort-spddup'>
+                  <div
+                    className="sortspeed"
+                    id="sortspeed1"
+                  >
+                    1x
+                  </div>
+                  <div
+                    className="sortspeed"
+                    id="sortspeed2"
+                  >
+                    2x
+                  </div>
+                  <div
                     className="sortspeed"
                     id="sortspeed3"
                   >

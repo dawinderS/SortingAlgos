@@ -21,7 +21,7 @@
 
 .navbar-header {
   height: 23vh;
-  min-height: 200px;
+  min-height: 209.25px;
   background: #212121;
   border-bottom: 2px solid whitesmoke;
   color: white;
@@ -185,8 +185,6 @@
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  /* padding: 10px 0px; */
-  cursor: pointer;
   min-width: 209.72px;
   height: 188.73px;
 }
@@ -194,7 +192,6 @@
 #stopsort div {
   font-size: 35px;
 }
-
 
 #stopsort-in {
   border: 1px solid whitesmoke;
@@ -204,6 +201,32 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
+}
+
+#reset-btndup {
+  display: none;
+  cursor: default;
+  opacity: 0.4;
+}
+#reset-btndup:hover {
+  background: teal;
+}
+#arr-sizesdup {
+  display: none;
+  cursor: default;
+  opacity: 0.4;
+}
+#arr-sizesdup div {
+  background: teal;
+  cursor: default;
+}
+#sort-spddup {
+  display: none;
+  opacity: 0.4;
+}
+#sort-spddup div {
+  cursor: default;
 }
 
 #insertion {
