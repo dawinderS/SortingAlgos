@@ -180,6 +180,32 @@
   background: rgb(0, 77, 77);
 }
 
+#stopsort {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  /* padding: 10px 0px; */
+  cursor: pointer;
+  min-width: 209.72px;
+  height: 188.73px;
+}
+
+#stopsort div {
+  font-size: 35px;
+}
+
+
+#stopsort-in {
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  height: 155px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #insertion {
   width: 50%;
 }
@@ -214,9 +240,13 @@
   padding-right: 60px;
 }
 
+#mergesortpad {
+  padding-left: 1px;
+}
+
 .info-show {
   height: 23vh;
-  min-height: 200px;
+  min-height: 209.25px;
   background: teal;
   border-bottom: 2px solid whitesmoke;
 }

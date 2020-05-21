@@ -8,9 +8,7 @@ import { selectionSortAnimations } from '../sortingAlgs/selectionSort';
 import githubLogo from '../github-logo.png';
 import linkedinLogo from '../linkedin-logo.png';
 
-const ANIMATION_SPEED_MS = 5;
 let animation_speed = 5;
-let end_sort = false;
 const PRIMARY_COLOR = 'turquoise';
 const SECONDARY_COLOR = 'rgb(255, 0, 0)';
 
@@ -64,9 +62,6 @@ export default class SortingVisuals extends React.Component {
   mergeSort() {
     const animations = mergeSortAnimations(this.state.arr);
     for (let i = 0; i < animations.length; i++) {
-      if (end_sort === true) {
-        return;
-      }
       const arrayBars = document.getElementsByClassName('arr-bars');
       const isColorChange = i % 3 !== 2;
       if (isColorChange) {
@@ -83,6 +78,9 @@ export default class SortingVisuals extends React.Component {
           const [barOneIdx, newHeight] = animations[i];
           const barOneStyle = arrayBars[barOneIdx].style;
           barOneStyle.height = `${newHeight}px`;
+          if (i === animations.length - 1) {
+            this.handleSortEnd();
+          }
         }, i * animation_speed);
       }
     }
@@ -90,7 +88,6 @@ export default class SortingVisuals extends React.Component {
 
   quickSort() {
     const [animations] = quickSortAnimations(this.state.arr);
-    let new_speed = 0;
     for (let i = 0; i < animations.length - 1; i++) {
       const isColorChange = (i % 6 === 0) || (i % 6 === 1);
       const arrayBars = document.getElementsByClassName('arr-bars');
@@ -111,6 +108,9 @@ export default class SortingVisuals extends React.Component {
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
           barStyle.height = `${newHeight}px`;
+          if (i === animations.length - 2) {
+            this.handleSortEnd();
+          }
         }, i * animation_speed * 0.6);  
       }
     }
@@ -125,7 +125,6 @@ export default class SortingVisuals extends React.Component {
 
   bubbleSort() {
     const [animations] = bubbleSortAnimations(this.state.arr);
-    let new_speed = 0;
     if (animation_speed === 5) {
       animation_speed = animation_speed * 0.4;
     }
@@ -148,6 +147,9 @@ export default class SortingVisuals extends React.Component {
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
           barStyle.height = `${newHeight}px`;
+          if (i > animations.length * 0.8) {
+            this.handleSortEnd();
+          }
         }, i * animation_speed * 0.5);  
       }
     }
@@ -173,6 +175,9 @@ export default class SortingVisuals extends React.Component {
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
           barStyle.height = `${newHeight}px`;
+          if (i === animations.length - 1) {
+            this.handleSortEnd();
+          }
         }, i * animation_speed * 0.7);  
       }
     }
@@ -180,7 +185,6 @@ export default class SortingVisuals extends React.Component {
 
   selectionSort() {
     const [animations,sortArray] = selectionSortAnimations(this.state.arr);
-    let new_speed = 0;
     if (animation_speed === 5) {
       animation_speed = animation_speed * 0.5
     }
@@ -202,6 +206,9 @@ export default class SortingVisuals extends React.Component {
         const barStyle = arrayBars[barIndex].style;
         setTimeout(() => {
           barStyle.height = `${newHeight}px`;
+          if (i === animations.length - 1) {
+            this.handleSortEnd();
+          }
         }, i * animation_speed * 0.7);  
       }
     }
@@ -266,6 +273,17 @@ export default class SortingVisuals extends React.Component {
     speed3.style.backgroundColor = "rgb(0, 77, 77)";
     animation_speed = 5;
   }
+  handleSortStart() {
+    document.getElementById("stopsort").style.display = 'flex';
+    document.getElementById("allsortalgs").style.display = 'none';
+  }
+  handleSortEnd() {
+    document.getElementById("stopsort").style.display = "none";
+    document.getElementById("allsortalgs").style.display = "inline";
+  }
+  handleEnd() {
+    window.location.reload();
+  }
 
   render() {
     const { arr } = this.state;
@@ -280,9 +298,8 @@ export default class SortingVisuals extends React.Component {
           <div className="navbar-btns">
             <div className="navbar-btns-in">
               <div className="reset-btn" onClick={() => this.resetArr()}>
-                Randomize Array / Reset
+                Generate New Array
               </div>
-              <button onClick={() => this.handleEnd()}>aa</button>
               <div className="array-size">
                 1. Choose array size
                 <span>
@@ -336,16 +353,24 @@ export default class SortingVisuals extends React.Component {
                   </div>
                 </span>
               </div>
-              <div className="sort-algs">
+              <div
+                className="sort-algs"
+                id="allsortalgs"
+                onClick={() => this.handleSortStart()}
+              >
                 3. Pick a sorting algorithm
                 <span className="sort-algs1">
-                  <div className="sorts" onClick={() => this.mergeSort()}>
-                    <div>Merge</div>
+                  <div className="sorts" onClick={() => this.quickSort()}>
+                    <div>Quick</div>
                     <div>Sort</div>
                   </div>
                   <div className="separator"></div>
-                  <div className="sorts" onClick={() => this.quickSort()}>
-                    <div>Quick</div>
+                  <div
+                    className="sorts"
+                    id="mergesortpad"
+                    onClick={() => this.mergeSort()}
+                  >
+                    <div>Merge</div>
                     <div>Sort</div>
                   </div>
                   <div className="separator"></div>
@@ -374,6 +399,12 @@ export default class SortingVisuals extends React.Component {
                   </div>
                   {/* <button onClick={ () => this.heapSort() }>Heap Sort</button> */}
                 </span>
+              </div>
+              <div id="stopsort" onClick={() => this.handleEnd()}>
+                3. Pick a sorting algorithm
+                <div id='stopsort-in'>
+                  <div>Stop sorting</div><div>[Reset]</div>
+                </div>
               </div>
               <div className="navbar-links">
                 <a
