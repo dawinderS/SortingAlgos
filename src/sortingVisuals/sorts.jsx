@@ -1,5 +1,5 @@
 import React from 'react';
-import './sorts.css'
+import './sorts.css';
 import { mergeSortAnimations } from '../sortingAlgs/mergeSort';
 import { quickSortAnimations } from '../sortingAlgs/quickSort';
 import { bubbleSortAnimations } from '../sortingAlgs/bubbleSort';
@@ -7,6 +7,7 @@ import { insertionSortAnimations } from "../sortingAlgs/insertionSort";
 import { selectionSortAnimations } from '../sortingAlgs/selectionSort';
 import githubLogo from '../github-logo.png';
 import linkedinLogo from '../linkedin-logo.png';
+import { InfoBar } from '../sortingAlgsInfo/mergeInfo';
 
 let animation_speed = 5;
 const PRIMARY_COLOR = 'turquoise';
@@ -40,7 +41,6 @@ export default class SortingVisuals extends React.Component {
       }
       bars /= 140;
     } else if (btn2color === 'rgb(0, 77, 77)') {
-      // let length = bars / 30;
       for (let i = 0; i < arrbars.length; i++) { 
         arrbars[i].style.width = '30px'; 
       }
@@ -53,7 +53,8 @@ export default class SortingVisuals extends React.Component {
     }
 
     for (let i = 0; i < bars; i++) {
-      arr.push(randomVal(15, HEIGHT * 0.71));
+      arr.push(randomVal(15, HEIGHT * 0.70));
+
     }
 
     this.setState({ arr });
@@ -113,10 +114,7 @@ export default class SortingVisuals extends React.Component {
           }
         }, i * animation_speed * 0.6);  
       }
-    }
-    // this.setState({array: sortArray})
-    // const RESTORE_TIME = parseInt(ANIMATION_SPEED_MS*animations.length/2 + 3000);
-    // setTimeout(() => this.restoreStoreButtons(), RESTORE_TIME);  
+    } 
   }
 
   heapSort() {
@@ -196,7 +194,7 @@ export default class SortingVisuals extends React.Component {
         const [temp, barOneIndex, barTwoIndex] = animations[i];
         const barOneStyle = arrayBars[barOneIndex].style;
         const barTwoStyle = arrayBars[barTwoIndex].style;
-        setTimeout(() => {
+        let timeout =  setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
         }, i * animation_speed * 0.7);
@@ -204,7 +202,7 @@ export default class SortingVisuals extends React.Component {
       else {
         const [temp, barIndex, newHeight] = animations[i];
         const barStyle = arrayBars[barIndex].style;
-        setTimeout(() => {
+        let timeout = setTimeout(() => {
           barStyle.height = `${newHeight}px`;
           if (i === animations.length - 1) {
             this.handleSortEnd();
@@ -232,10 +230,13 @@ export default class SortingVisuals extends React.Component {
     sizeM.style.backgroundColor = "rgb(0, 77, 77)";
     this.resetArr();
   }
+  handleSizeMM() {
+
+    this.handleSizeM();
+  }
   handleSizeL() {
     let sizeBtns = document.getElementsByClassName("arrsize");
     let sizeL = document.getElementById("arrsize3");
-
     for (let i = 0; i < sizeBtns.length; i++) {
       sizeBtns[i].style.backgroundColor = "teal";
     }
@@ -295,7 +296,6 @@ export default class SortingVisuals extends React.Component {
   }
   handleEnd() {
     window.location.reload();
-    
   }
 
   render() {
@@ -323,7 +323,7 @@ export default class SortingVisuals extends React.Component {
                     S
                   </div>
                   <div
-                    onClick={() => this.handleSizeM()}
+                    onClick={() => this.handleSizeMM()}
                     className="arrsize"
                     id="arrsize2"
                   >
@@ -474,7 +474,9 @@ export default class SortingVisuals extends React.Component {
           </div>
         </div>
         <div className="barshow1">
-          <div className="info-show">sdfsdf</div>
+          <div className="info-show">
+            <InfoBar />
+          </div>
           <div className="bar-show" id="barshow">
             {arr.map((val, i) => (
               <div

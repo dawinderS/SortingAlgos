@@ -21,7 +21,7 @@
 
 .navbar-header {
   height: 23vh;
-  min-height: 209.25px;
+  min-height: 230px;
   background: #212121;
   border-bottom: 2px solid whitesmoke;
   color: white;
@@ -38,7 +38,7 @@
 
 .navbar-btns {
   height: 77vh;
-  min-height: 630px;
+  min-height: 620px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,10 +268,62 @@
 }
 
 .info-show {
-  height: 23vh;
-  min-height: 209.25px;
+  height: 23.3vh;
+  min-height: 230px;
   background: teal;
+  min-width: 1200px;
   border-bottom: 2px solid whitesmoke;
+  display: flex;
+  align-items: center;
+}
+
+.info-showin {
+  display: flex;
+  height: 90%;
+  width: 100%;
+  align-items: center;
+}
+
+.info-showin2 {
+  display: flex;
+  margin: 10px 10px;
+  width: 100%;
+  height: 87%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.info-bar  {
+  border: 1px solid black;
+  border-radius: 7px;
+  color: whitesmoke;
+  font-weight: 900;
+  padding: 10px;
+  min-width: 50%;
+  height: 100%;
+  background: #212121;
+}
+
+#info-barcode {
+  min-width: 36%;
+}
+
+#extra-links {
+  min-width: 5%;
+}
+
+.info-barname {
+  display: flex;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+}
+.info-barname span {
+  background: whitesmoke;
+  height: 1px;
+  width: 80px;
+  margin: 0px 8px;
+  margin-bottom: 3px;
 }
 
 .arr-bars {
