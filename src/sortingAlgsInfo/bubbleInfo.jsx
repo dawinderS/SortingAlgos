@@ -7,7 +7,7 @@ import volMute from '../pics/mute_vol.png';
 import youtube from '../pics/youtube.png';
 import reading from '../pics/reading.png';
 
-export const MergeInfo = ({  }) => {
+export const BubbleInfo = ({ }) => {
   const display = true ? (
     <div className="info-showin2">
       <div className="info-bar">
@@ -36,7 +36,7 @@ export const MergeInfo = ({  }) => {
       </div>
       <div className="info-bar" id="info-barcode">
         <div className="info-bartitle" id='info-barcodetop'>Psuedocode [scroll down to see all]</div>
-        <img src={mergesortCode} alt=""/>
+        <img src={mergesortCode} alt="" />
       </div>
       <div className="info-bar" id="extra-links">
         {/* <div className="info-bartitle">
@@ -54,8 +54,8 @@ export const MergeInfo = ({  }) => {
       </div>
     </div>
   ) : (
-    <div>Not working</div>
-  );
+      <div>Not working</div>
+    );
 
   return (
     <div className='info-showin'>

@@ -7,7 +7,11 @@ import { insertionSortAnimations } from "../sortingAlgs/insertionSort";
 import { selectionSortAnimations } from '../sortingAlgs/selectionSort';
 import githubLogo from '../github-logo.png';
 import linkedinLogo from '../linkedin-logo.png';
-import { InfoBar } from '../sortingAlgsInfo/mergeInfo';
+import { MergeInfo } from '../sortingAlgsInfo/mergeInfo';
+import { BubbleSort } from '../sortingAlgsInfo/bubbleInfo';
+import { QuickSort } from '../sortingAlgsInfo/quickInfo';
+import { InsertionSort } from '../sortingAlgsInfo/insertionInfo';
+import { SelectionSort} from '../sortingAlgsInfo/selectionInfo';
 
 let animation_speed = 5;
 const PRIMARY_COLOR = 'turquoise';
@@ -475,7 +479,7 @@ export default class SortingVisuals extends React.Component {
         </div>
         <div className="barshow1">
           <div className="info-show">
-            <InfoBar />
+            <MergeInfo />
           </div>
           <div className="bar-show" id="barshow">
             {arr.map((val, i) => (

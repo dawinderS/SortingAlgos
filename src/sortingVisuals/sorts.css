@@ -16,7 +16,6 @@
   min-height: 820px;
   background: teal;
   border-right: 2px solid whitesmoke;
-  /* margin-bottom: 1vh; */
 }
 
 .navbar-header {
@@ -148,6 +147,7 @@
   /* border-bottom: none; */
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  padding-bottom: 1px;
 }
 .sort-algs2 {
   display: flex;
@@ -271,7 +271,7 @@
   height: 23.3vh;
   min-height: 230px;
   background: teal;
-  min-width: 1200px;
+  min-width: 1250px;
   border-bottom: 2px solid whitesmoke;
   display: flex;
   align-items: center;
@@ -286,44 +286,109 @@
 
 .info-showin2 {
   display: flex;
-  margin: 10px 10px;
+  margin: 5px 5px;
   width: 100%;
-  height: 87%;
+  height: 90%;
   justify-content: space-around;
   align-items: center;
 }
 
 .info-bar  {
   border: 1px solid black;
-  border-radius: 7px;
+  border-radius: 5px;
   color: whitesmoke;
   font-weight: 900;
-  padding: 10px;
-  min-width: 50%;
-  height: 100%;
-  background: #212121;
+  padding: 0px 10px;
+  min-width: 56%;
+  max-width: 56%;
+  height: 110%;
+  background: #282c34;
 }
 
 #info-barcode {
-  min-width: 36%;
+  min-width: 32%;
+  max-width: 32%;
+  background-color: #282c34;
+  overflow-x: hidden; 
+  overflow-x: auto;
+}
+
+.info-barmid {
+  display: flex;
+  padding: 5px 5px;
+  font-size: 20px;
+  width: 99%;
+  max-width: 99%;
+  height: 95%;
+}
+.info-barmid1 {
+  width: 35%;
+  border-right: 1px solid whitesmoke;
+  height: 100%;
+}
+.info-bartitle {
+  font-size: 25px;
+  width: 100%;
+  border-bottom: 1px solid whitesmoke;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.info-barhold {
+  display: flex;
+  margin-top: 12px;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+.info-barhold img {
+  width: 94%;
+  border-radius: 3px;
+}
+
+.info-barmid2 {
+  width: 65%;
+  max-width: 65%;
+  min-width: 65%;
+  height: 100%;
+}
+
+.info-bar-pros {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  /* width: 150px; */
+  width: 97%;
+  margin: 15px;
+}
+
+#makeflex {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#info-barcodetop {
+  margin-top: 5px;
+}
+#info-barcode img {
+  width: 110%;
+  border-radius: 5px;
+  margin-top: 5px;
 }
 
 #extra-links {
-  min-width: 5%;
-}
-
-.info-barname {
+  min-width: 4%;
+  max-width: 4%;
+  border: none;
+  /* border: 1px solid whitesmoke; */
+  background-color: teal;
   display: flex;
-  font-size: 22px;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
-.info-barname span {
-  background: whitesmoke;
-  height: 1px;
-  width: 80px;
-  margin: 0px 8px;
-  margin-bottom: 3px;
+#extra-links img {
+  cursor: pointer;
+  width: 35px;
 }
 
 .arr-bars {
