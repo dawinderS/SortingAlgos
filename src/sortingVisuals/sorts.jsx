@@ -310,7 +310,8 @@ export default class SortingVisuals extends React.Component {
     document.getElementById("sort-spd").style.display = "flex";
   }
   handleEnd() {
-    window.location.reload();
+    // window.location.reload();
+    document.getElementById('stopsort-in').style.backgroundColor = "rgb(0, 77, 77)";
   }
   handleInfoHide() {
     let infobars = document.getElementsByClassName('info-showin2');
@@ -343,37 +344,21 @@ export default class SortingVisuals extends React.Component {
                   <div onClick={() => this.handleSizeS()} className="arrsize" id="arrsize1">
                     S
                   </div>
-                  <div
-                    onClick={() => this.handleSizeMM()}
-                    className="arrsize"
-                    id="arrsize2"
-                  >
+                  <div onClick={() => this.handleSizeMM()} className="arrsize" id="arrsize2">
                     M
                   </div>
                   <div
                     onClick={() => this.handleSizeL()}
                     className="arrsize"
                     id="arrsize3"
-                    style={{ backgroundColor: "rgb(0, 77, 77)" }}
-                  >
+                    style={{ backgroundColor: "rgb(0, 77, 77)" }}>
                     L
                   </div>
                 </span>
                 <span id='arr-sizesdup'>
-                  <div className="arrsize" id="arrsize1">
-                    S
-                  </div>
-                  <div
-                    className="arrsize"
-                    id="arrsize2"
-                  >
-                    M
-                  </div>
-                  <div
-                    className="arrsize"
-                    id="arrsize3"
-                    style={{ backgroundColor: "rgb(0, 77, 77)" }}
-                  >
+                  <div className="arrsize" id="arrsize1">S</div>
+                  <div className="arrsize" id="arrsize2">M</div>
+                  <div className="arrsize" id="arrsize3" style={{ backgroundColor: "rgb(0, 77, 77)" }}>
                     L
                   </div>
                 </span>
@@ -404,22 +389,13 @@ export default class SortingVisuals extends React.Component {
                   </div>
                 </span>
                 <span id='sort-spddup'>
-                  <div
-                    className="sortspeed"
-                    id="sortspeed1"
-                  >
+                  <div className="sortspeed" id="sortspeed1">
                     1x
                   </div>
-                  <div
-                    className="sortspeed"
-                    id="sortspeed2"
-                  >
+                  <div className="sortspeed" id="sortspeed2">
                     2x
                   </div>
-                  <div
-                    className="sortspeed"
-                    id="sortspeed3"
-                  >
+                  <div className="sortspeed" id="sortspeed3">
                     3x
                   </div>
                 </span>
