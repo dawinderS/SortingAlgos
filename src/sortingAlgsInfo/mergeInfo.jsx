@@ -9,7 +9,7 @@ import reading from '../pics/reading.png';
 
 export const MergeInfo = ({  }) => {
   const display = true ? (
-    <div className="info-showin2">
+    <div className="info-showin2" id='mergeinfo'>
       <div className="info-bar">
         <div className="info-barmid">
           <div className="info-barmid1">
@@ -49,7 +49,7 @@ export const MergeInfo = ({  }) => {
           <img src={youtube} alt="YouTube" />
         </a>
         <a target="_blank" href="https://www.geeksforgeeks.org/merge-sort/">
-          <img src={reading} alt="Wiki" />
+          <img src={reading} alt="Reading" />
         </a>
       </div>
     </div>

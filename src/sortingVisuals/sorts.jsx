@@ -8,10 +8,10 @@ import { selectionSortAnimations } from '../sortingAlgs/selectionSort';
 import githubLogo from '../github-logo.png';
 import linkedinLogo from '../linkedin-logo.png';
 import { MergeInfo } from '../sortingAlgsInfo/mergeInfo';
-import { BubbleSort } from '../sortingAlgsInfo/bubbleInfo';
-import { QuickSort } from '../sortingAlgsInfo/quickInfo';
-import { InsertionSort } from '../sortingAlgsInfo/insertionInfo';
-import { SelectionSort} from '../sortingAlgsInfo/selectionInfo';
+import { BubbleInfo } from '../sortingAlgsInfo/bubbleInfo';
+import { QuickInfo } from '../sortingAlgsInfo/quickInfo';
+import { InsertionInfo } from '../sortingAlgsInfo/insertionInfo';
+import { SelectionInfo } from '../sortingAlgsInfo/selectionInfo';
 
 let animation_speed = 5;
 const PRIMARY_COLOR = 'turquoise';
@@ -27,6 +27,7 @@ export default class SortingVisuals extends React.Component {
 
   componentDidMount() {
     this.resetArr();
+    this.handleInfoHide();
   }
 
   resetArr() {
@@ -57,7 +58,7 @@ export default class SortingVisuals extends React.Component {
     }
 
     for (let i = 0; i < bars; i++) {
-      arr.push(randomVal(15, HEIGHT * 0.70));
+      arr.push(randomVal(15, HEIGHT * 0.69));
 
     }
 
@@ -89,6 +90,8 @@ export default class SortingVisuals extends React.Component {
         }, i * animation_speed);
       }
     }
+    this.handleInfoHide();
+    document.getElementById("mergeinfo").style.display = "flex";
   }
 
   quickSort() {
@@ -118,7 +121,9 @@ export default class SortingVisuals extends React.Component {
           }
         }, i * animation_speed * 0.6);  
       }
-    } 
+    }
+    this.handleInfoHide();
+    document.getElementById("quickinfo").style.display = "flex";
   }
 
   heapSort() {
@@ -155,6 +160,8 @@ export default class SortingVisuals extends React.Component {
         }, i * animation_speed * 0.5);  
       }
     }
+    this.handleInfoHide();
+    document.getElementById("bubbleinfo").style.display = "flex";
   }
 
   insertionSort() {
@@ -183,6 +190,8 @@ export default class SortingVisuals extends React.Component {
         }, i * animation_speed * 0.7);  
       }
     }
+    this.handleInfoHide();
+    document.getElementById("insertioninfo").style.display = "flex";
   }
 
   selectionSort() {
@@ -214,6 +223,8 @@ export default class SortingVisuals extends React.Component {
         }, i * animation_speed * 0.7);  
       }
     }
+    this.handleInfoHide();
+    document.getElementById("selectioninfo").style.display = "flex";
   }
 
   handleSizeS() {
@@ -300,6 +311,12 @@ export default class SortingVisuals extends React.Component {
   }
   handleEnd() {
     window.location.reload();
+  }
+  handleInfoHide() {
+    let infobars = document.getElementsByClassName('info-showin2');
+    for (let i = 0; i < infobars.length; i++) {
+      infobars[i].style.display = "none";
+    }  
   }
 
   render() {
@@ -480,6 +497,10 @@ export default class SortingVisuals extends React.Component {
         <div className="barshow1">
           <div className="info-show">
             <MergeInfo />
+            <QuickInfo />
+            <BubbleInfo />
+            <InsertionInfo />
+            <SelectionInfo />
           </div>
           <div className="bar-show" id="barshow">
             {arr.map((val, i) => (

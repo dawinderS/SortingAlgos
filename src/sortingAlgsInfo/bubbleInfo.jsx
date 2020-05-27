@@ -9,7 +9,7 @@ import reading from '../pics/reading.png';
 
 export const BubbleInfo = ({ }) => {
   const display = true ? (
-    <div className="info-showin2">
+    <div className="info-showin2" id='bubbleinfo'>
       <div className="info-bar">
         <div className="info-barmid">
           <div className="info-barmid1">
@@ -22,13 +22,13 @@ export const BubbleInfo = ({ }) => {
             <div className="info-bartitle">Pros (+) / Cons (-)</div>
             <div className="info-bar-pros">
               <div id="makeflex">
-                + Fast (as it runs in O(nlog(n)) time, scales well as n grows)
+                + Simplicity (easy to understand and implement)
               </div>
               <div id="makeflex">
-                + Parallelizable (input is broken into chunks, each of which can be sorted at the same time in parallel)
+                + Space (elements are swapped in place w/o using additional storage so little memory is required)
               </div>
               <div id="makeflex">
-                - Space (takes O(n) extra space)
+                - Horribly inefficient (sorting takes forever to complete, not suited for real life usage)
               </div>
             </div>
           </div>
@@ -45,10 +45,10 @@ export const BubbleInfo = ({ }) => {
         <a target="_blank" href="https://www.linkedin.com/in/dawinder-singh/">
           <img src={vol} alt="Audio" />
         </a>
-        <a target="_blank" href="https://www.youtube.com/watch?v=4VqmGXwpLqc">
+        <a target="_blank" href="https://www.youtube.com/watch?v=xli_FI7CuzA">
           <img src={youtube} alt="YouTube" />
         </a>
-        <a target="_blank" href="https://www.geeksforgeeks.org/merge-sort/">
+        <a target="_blank" href="https://www.geeksforgeeks.org/bubble-sort/">
           <img src={reading} alt="Wiki" />
         </a>
       </div>

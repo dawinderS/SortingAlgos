@@ -9,7 +9,7 @@ import reading from '../pics/reading.png';
 
 export const QuickInfo = ({ }) => {
   const display = true ? (
-    <div className="info-showin2">
+    <div className="info-showin2" id='quickinfo'>
       <div className="info-bar">
         <div className="info-barmid">
           <div className="info-barmid1">
@@ -25,10 +25,10 @@ export const QuickInfo = ({ }) => {
                 + Fast (as it runs in O(nlog(n)) time, scales well as n grows)
               </div>
               <div id="makeflex">
-                + Parallelizable (input is broken into chunks, each of which can be sorted at the same time in parallel)
+                + Parallelizable (input is divided into two sections, each of which can be sorted at the same time in parallel)
               </div>
               <div id="makeflex">
-                - Space (takes O(n) extra space)
+                - Slow worst-case (can take O(n^2) time which is undesirable in certain cases)
               </div>
             </div>
           </div>
@@ -45,11 +45,11 @@ export const QuickInfo = ({ }) => {
         <a target="_blank" href="https://www.linkedin.com/in/dawinder-singh/">
           <img src={vol} alt="Audio" />
         </a>
-        <a target="_blank" href="https://www.youtube.com/watch?v=4VqmGXwpLqc">
+        <a target="_blank" href="https://www.youtube.com/watch?v=Hoixgm4-P4M">
           <img src={youtube} alt="YouTube" />
         </a>
-        <a target="_blank" href="https://www.geeksforgeeks.org/merge-sort/">
-          <img src={reading} alt="Wiki" />
+        <a target="_blank" href="https://www.geeksforgeeks.org/quick-sort/">
+          <img src={reading} alt="Reading" />
         </a>
       </div>
     </div>
