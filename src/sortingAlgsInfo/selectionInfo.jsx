@@ -1,7 +1,7 @@
 import React from 'react';
 import '../sortingVisuals/sorts.css';
-import mergeSort from '../mergeSort.png';
-import mergesortCode from '../mergesort-code.png';
+import mergeSort from '../pics/selectionsort.png';
+import mergesortCode from '../pics/selectioncode.png';
 import vol from '../pics/vol.png';
 import volMute from '../pics/mute_vol.png';
 import youtube from '../pics/youtube.png';
@@ -34,7 +34,7 @@ export const SelectionInfo = ({ }) => {
           </div>
         </div>
       </div>
-      <div className="info-bar" id="info-barcode">
+      <div className="info-bar1" id="info-barcode">
         <div className="info-bartitle" id='info-barcodetop'>Psuedocode [scroll down to see all]</div>
         <img src={mergesortCode} alt="" />
       </div>

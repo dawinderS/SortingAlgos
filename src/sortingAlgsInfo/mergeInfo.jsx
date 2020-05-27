@@ -1,7 +1,7 @@
 import React from 'react';
 import '../sortingVisuals/sorts.css';
-import mergeSort from '../mergeSort.png';
-import mergesortCode from '../mergesort-code.png';
+import mergeSort from '../pics/mergeSort.png';
+import mergesortCode from '../pics/mergecode.png';
 import vol from '../pics/vol.png';
 import volMute from '../pics/mute_vol.png';
 import youtube from '../pics/youtube.png';
@@ -34,9 +34,9 @@ export const MergeInfo = ({  }) => {
           </div>
         </div>
       </div>
-      <div className="info-bar" id="info-barcode">
+      <div className="info-bar1" id="info-barcode">
         <div className="info-bartitle" id='info-barcodetop'>Psuedocode [scroll down to see all]</div>
-        <img src={mergesortCode} alt=""/>
+        <img id='mergecpic' src={mergesortCode} alt=""/>
       </div>
       <div className="info-bar" id="extra-links">
         {/* <div className="info-bartitle">

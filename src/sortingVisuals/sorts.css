@@ -318,6 +318,17 @@
   height: 110%;
   background: #282c34;
 }
+.info-bar1  {
+  border: 1px solid black;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-weight: 900;
+  padding: 0px 10px;
+  min-width: 56%;
+  max-width: 56%;
+  height: 110%;
+  background: #282c34;
+}
 
 #info-barcode {
   min-width: 32%;
@@ -383,10 +394,14 @@
 #info-barcodetop {
   margin-top: 5px;
 }
-#info-barcode img {
-  width: 110%;
+.info-bar1 img {
+  width: 80%;
   border-radius: 5px;
   margin-top: 5px;
+}
+
+#mergecpic {
+  width: 110%;
 }
 
 #extra-links {
