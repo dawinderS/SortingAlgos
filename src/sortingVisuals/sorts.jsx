@@ -7,6 +7,7 @@ import { insertionSortAnimations } from "../sortingAlgs/insertionSort";
 import { selectionSortAnimations } from '../sortingAlgs/selectionSort';
 import githubLogo from '../github-logo.png';
 import linkedinLogo from '../linkedin-logo.png';
+import { Intro } from '../sortingAlgsInfo/intro';
 import { MergeInfo } from '../sortingAlgsInfo/mergeInfo';
 import { BubbleInfo } from '../sortingAlgsInfo/bubbleInfo';
 import { QuickInfo } from '../sortingAlgsInfo/quickInfo';
@@ -32,7 +33,7 @@ export default class SortingVisuals extends React.Component {
 
   resetArr() {
     const BARS = document.getElementById("barshow").clientWidth;
-    const HEIGHT = document.getElementById('app').clientHeight;
+    const HEIGHT = document.getElementById('barshow').clientHeight;
     const arr = [];
     const btn1color = document.getElementById('arrsize1').style.backgroundColor;
     const btn2color = document.getElementById('arrsize2').style.backgroundColor;
@@ -58,8 +59,7 @@ export default class SortingVisuals extends React.Component {
     }
 
     for (let i = 0; i < bars; i++) {
-      arr.push(randomVal(15, HEIGHT * 0.69));
-
+      arr.push(randomVal(15, HEIGHT * 0.94));
     }
 
     this.setState({ arr });
@@ -91,6 +91,8 @@ export default class SortingVisuals extends React.Component {
       }
     }
     this.handleInfoHide();
+    this.handleIntroHide();
+    this.handleAudio();
     document.getElementById("mergeinfo").style.display = "flex";
   }
 
@@ -123,6 +125,8 @@ export default class SortingVisuals extends React.Component {
       }
     }
     this.handleInfoHide();
+    this.handleIntroHide();
+    this.handleAudio();
     document.getElementById("quickinfo").style.display = "flex";
   }
 
@@ -161,6 +165,8 @@ export default class SortingVisuals extends React.Component {
       }
     }
     this.handleInfoHide();
+    this.handleIntroHide();
+    this.handleAudio();
     document.getElementById("bubbleinfo").style.display = "flex";
   }
 
@@ -191,6 +197,8 @@ export default class SortingVisuals extends React.Component {
       }
     }
     this.handleInfoHide();
+    this.handleIntroHide();
+    this.handleAudio();
     document.getElementById("insertioninfo").style.display = "flex";
   }
 
@@ -224,6 +232,8 @@ export default class SortingVisuals extends React.Component {
       }
     }
     this.handleInfoHide();
+    this.handleIntroHide();
+    this.handleAudio();
     document.getElementById("selectioninfo").style.display = "flex";
   }
 
@@ -309,15 +319,25 @@ export default class SortingVisuals extends React.Component {
     document.getElementById("sort-spddup").style.display = "none";
     document.getElementById("sort-spd").style.display = "flex";
   }
+  handleAudio() {
+    let audio = document.getElementsByTagName('audio');
+    for (let i = 0; i < audio.length; i++) {
+      audio[i].pause();
+      audio[i].currentTime = 0;
+    }
+  }
   handleEnd() {
-    // window.location.reload();
-    document.getElementById('stopsort-in').style.backgroundColor = "rgb(0, 77, 77)";
+    window.location.reload();
+    // document.getElementById('stopsort-in').style.backgroundColor = "rgb(0, 77, 77)";
   }
   handleInfoHide() {
     let infobars = document.getElementsByClassName('info-showin2');
     for (let i = 0; i < infobars.length; i++) {
       infobars[i].style.display = "none";
     }  
+  }
+  handleIntroHide() {
+    document.getElementById("intro").style.display = "none";
   }
 
   render() {
@@ -472,6 +492,7 @@ export default class SortingVisuals extends React.Component {
         </div>
         <div className="barshow1">
           <div className="info-show">
+            <Intro />
             <MergeInfo />
             <QuickInfo />
             <BubbleInfo />

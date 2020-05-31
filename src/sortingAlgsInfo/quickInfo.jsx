@@ -6,6 +6,7 @@ import vol from '../pics/vol.png';
 import volMute from '../pics/mute_vol.png';
 import youtube from '../pics/youtube.png';
 import reading from '../pics/reading.png';
+import introaudio from '../pics/sound.mp3';
 
 export const QuickInfo = ({ }) => {
   const display = true ? (
@@ -39,12 +40,21 @@ export const QuickInfo = ({ }) => {
         <img src={mergesortCode} alt="" />
       </div>
       <div className="info-bar" id="extra-links">
-        {/* <div className="info-bartitle">
-          Links
-        </div> */}
-        <a target="_blank" href="https://www.linkedin.com/in/dawinder-singh/">
-          <img src={vol} alt="Audio" />
-        </a>
+        <div onClick={() => {
+          document.getElementsByTagName('audio')[0].play();
+          document.getElementById('audio-tag4').style.display = 'none';
+          document.getElementById('audio-mute-tag4').style.display = 'flex';
+        }} id='audio-tag4' className='audio-tag'>
+          <img src={vol} alt="Play" />
+          <audio id='m0' class='controls' preload="auto" src={introaudio}></audio>
+        </div>
+        <div onClick={() => {
+          document.getElementsByTagName('audio')[0].pause();
+          document.getElementById('audio-tag4').style.display = 'flex';
+          document.getElementById('audio-mute-tag4').style.display = 'none';
+        }} id='audio-mute-tag4' className='audio-mute-tag'>
+          <img src={volMute} alt="Mute" />
+        </div>
         <a target="_blank" href="https://www.youtube.com/watch?v=Hoixgm4-P4M">
           <img src={youtube} alt="YouTube" />
         </a>
