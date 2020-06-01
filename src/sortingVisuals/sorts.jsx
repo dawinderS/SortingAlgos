@@ -319,6 +319,15 @@ export default class SortingVisuals extends React.Component {
     document.getElementById("sort-spddup").style.display = "none";
     document.getElementById("sort-spd").style.display = "flex";
   }
+  handleInfoHide() {
+    let infobars = document.getElementsByClassName('info-showin2');
+    for (let i = 0; i < infobars.length; i++) {
+      infobars[i].style.display = "none";
+    }
+  }
+  handleIntroHide() {
+    document.getElementById("intro").style.display = "none";
+  }
   handleAudio() {
     let audio = document.getElementsByTagName('audio');
     for (let i = 0; i < audio.length; i++) {
@@ -328,18 +337,8 @@ export default class SortingVisuals extends React.Component {
   }
   handleEnd() {
     window.location.reload();
-    // document.getElementById('stopsort-in').style.backgroundColor = "rgb(0, 77, 77)";
   }
-  handleInfoHide() {
-    let infobars = document.getElementsByClassName('info-showin2');
-    for (let i = 0; i < infobars.length; i++) {
-      infobars[i].style.display = "none";
-    }  
-  }
-  handleIntroHide() {
-    document.getElementById("intro").style.display = "none";
-  }
-
+  
   render() {
     const { arr } = this.state;
 

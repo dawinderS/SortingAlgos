@@ -28,13 +28,20 @@ export const Intro = ({ }) => {
                 - Use left sidebar to determine array size, sorting speed, and sorting algorithm
                 (use generate new arr button to randomize arr)
               </div>
-              <div id='changefont1'>
+              <div id='changefont11'>
                 - I personally recommend using large arr size and 3x speed, best to see what's happening and beautiful to watch :)
               </div>
               <div id='changefont1'>
                 - Once you pick a sorting algo, the sorting will begin & this top navbar will contain info about that sorting algo
-                (Big O costs, Pros/Cons, etc)
+                (Big O costs, Pros/Cons, etc) --> scroll down to read more
               </div>
+              <div id='changefont1'>
+                - Once sorting of an array is complete, use generate new array or click on any of the arr sizes to generate a new array to sort
+              </div>
+              {/* <div id='changefont1'>
+                - Once you pick a sorting algo, the sorting will begin & this top navbar will contain info about that sorting algo
+                (Big O costs, Pros/Cons, etc)
+              </div> */}
               {/* <div>
                 + 
               </div> */}
@@ -66,7 +73,7 @@ export const Intro = ({ }) => {
             document.getElementById('audio-mute-tag').style.display = 'flex';
         }} id='audio-tag' className='audio-tag'>
           <img src={vol} alt="Play" />
-          <audio id='m0' class='controls' preload="auto" src={introaudio}></audio>
+          <audio id='m0' className='controls' preload="auto" src={introaudio}></audio>
         </div>
         <div onClick={ () => {
             document.getElementsByTagName('audio')[0].pause();

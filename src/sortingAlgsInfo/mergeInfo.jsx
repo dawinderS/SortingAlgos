@@ -46,7 +46,7 @@ export const MergeInfo = ({  }) => {
           document.getElementById('audio-mute-tag3').style.display = 'flex';
         }} id='audio-tag3' className='audio-tag'>
           <img src={vol} alt="Play" />
-          <audio id='m0' class='controls' preload="auto" src={introaudio}></audio>
+          <audio id='m0' className='controls' preload="auto" src={introaudio}></audio>
         </div>
         <div onClick={() => {
           document.getElementsByTagName('audio')[0].pause();

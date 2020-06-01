@@ -34,6 +34,9 @@ export const BubbleInfo = ({ }) => {
             </div>
           </div>
         </div>
+        <div>
+          sdfsdf
+        </div>
       </div>
       <div className="info-bar1" id="info-barcode">
         <div className="info-bartitle" id='info-barcodetop'>Psuedocode [scroll down to see all]</div>
@@ -46,7 +49,7 @@ export const BubbleInfo = ({ }) => {
           document.getElementById('audio-mute-tag1').style.display = 'flex';
         }} id='audio-tag1' className='audio-tag'>
           <img src={vol} alt="Play" />
-          <audio id='m0' class='controls' preload="auto" src={introaudio}></audio>
+          <audio id='m0' className='controls' preload="auto" src={introaudio}></audio>
         </div>
         <div onClick={() => {
           document.getElementsByTagName('audio')[0].pause();
