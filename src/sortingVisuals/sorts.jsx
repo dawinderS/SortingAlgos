@@ -474,12 +474,14 @@ export default class SortingVisuals extends React.Component {
               </div>
               <div className="navbar-links">
                 <a
+                  rel="noopener noreferrer"
                   target="_blank"
                   href="https://github.com/dawinderS/sortingVisuals"
                 >
                   <img src={githubLogo} alt="Github" />
                 </a>
                 <a
+                  rel="noopener noreferrer"
                   target="_blank"
                   href="https://www.linkedin.com/in/dawinder-singh/"
                 >

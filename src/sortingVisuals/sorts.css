@@ -340,8 +340,6 @@
   max-width: 56%;
   height: 110%;
   background: #282c34;
-  overflow-x: hidden; 
-  overflow-x: auto;
 }
 .info-bar1  {
   border: 1px solid black;
@@ -361,6 +359,20 @@
   background-color: #282c34;
   overflow-x: hidden; 
   overflow-x: auto;
+}
+
+#sortexplained {
+  background: whitesmoke;
+  font-size: 15px;
+  color: black;
+  border-radius: 5px;
+  padding: 7px 0px;
+  margin-top: 25px;
+}
+
+#sortexplained p {
+  padding: 5px 15px;
+  margin: 0px;
 }
 
 .info-barmid {
@@ -451,7 +463,7 @@
 }
 
 .info-bar-pros div {
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   margin-bottom: 6px;
 }
@@ -459,6 +471,19 @@
 #makeflex {
   display: flex;
   margin-bottom: 10px;
+}
+
+.info-bar-pros span {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  background: #212121;
+  padding: 7px 5px;
+  margin-top: 15px;
+  margin-left: 55px;
+  color: whitesmoke;
+  border-radius: 5px;
+  border: 1px solid whitesmoke;
 }
 
 #info-barcodetop {

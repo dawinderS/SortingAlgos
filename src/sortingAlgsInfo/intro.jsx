@@ -1,12 +1,10 @@
 import React from 'react';
 import '../sortingVisuals/sorts.css';
-import mergeSort from '../pics/insertionsort.png';
-import mergesortCode from '../pics/bubblecode.png';
 import vol from '../pics/vol.png';
 import volMute from '../pics/mute_vol.png';
 import youtube from '../pics/youtube.png';
 import reading from '../pics/reading.png';
-import introaudio from '../pics/sound.mp3';
+import introaudio from '../pics/intro.mp3';
 
 export const Intro = ({ }) => {
   const display = true ? (
@@ -33,7 +31,7 @@ export const Intro = ({ }) => {
               </div>
               <div id='changefont1'>
                 - Once you pick a sorting algo, the sorting will begin & this top navbar will contain info about that sorting algo
-                (Big O costs, Pros/Cons, etc) --> scroll down to read more
+                (Big O costs, Pros/Cons, what is happening, etc) --> scroll down to read more
               </div>
               <div id='changefont1'>
                 - Once sorting of an array is complete, use generate new array or click on any of the arr sizes to generate a new array to sort
@@ -56,10 +54,10 @@ export const Intro = ({ }) => {
             - Psuedocode for the sorting algo will be in this box (make sure to scroll to see all of it!)
           </div>
           <div id='changefont2'>
-            - On the right of this box are three additional resources
+            - On the right of this box are three additional resources for your chosen sort
           </div>
           <div id='changefont3'>
-            - Audio containing my quick explanation of the sort, a Youtube link for the sort, & a further reading link for the sort
+            - Audio containing my quick explanation of the sort, a Youtube link, & a further reading link
           </div>
         </div>
       </div>
@@ -82,12 +80,8 @@ export const Intro = ({ }) => {
         }} id='audio-mute-tag' className='audio-mute-tag'>
           <img src={volMute} alt="Mute"/>
         </div>
-        <a id='intro-btn'> 
-          <img src={youtube} alt="YouTube" />
-        </a>
-        <a id='intro-btn'>
-          <img src={reading} alt="Wiki" />
-        </a>
+        <img id='intro-btn' src={youtube} alt="YouTube" />
+        <img id='intro-btn' src={reading} alt="Wiki" />
       </div>
     </div>
   ) : (
