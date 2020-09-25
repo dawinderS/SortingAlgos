@@ -51,7 +51,7 @@ export const Intro = ({ }) => {
         <div className="info-bartitle" id='info-barcodetop1'>Additional Resources</div>
         <div className="info-bar-pros">
           <div id='changefont2'>
-            - Psuedocode for the sorting algo will be in this box (make sure to scroll to see all of it!)
+            - Pseudocode for the sorting algo will be in this box (make sure to scroll to see all of it!)
           </div>
           <div id='changefont2'>
             - On the right of this box are three additional resources for your chosen sort

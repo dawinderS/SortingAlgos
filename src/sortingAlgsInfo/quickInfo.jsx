@@ -48,7 +48,7 @@ export const QuickInfo = ({ }) => {
         </div>
       </div>
       <div className="info-bar1" id="info-barcode">
-        <div className="info-bartitle" id='info-barcodetop'>Psuedocode [scroll down to see all]</div>
+        <div className="info-bartitle" id='info-barcodetop'>Pseudocode [scroll down to see all]</div>
         <img src={mergesortCode} alt="" />
       </div>
       <div className="info-bar" id="extra-links">
