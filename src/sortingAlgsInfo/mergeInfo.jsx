@@ -53,7 +53,7 @@ export const MergeInfo = ({  }) => {
         <img id='mergecpic' src={mergesortCode} alt=""/>
       </div>
       <div className="info-bar" id="extra-links">
-        <div onClick={() => {
+        {/* <div onClick={() => {
           document.getElementsByTagName('audio')[1].play();
           document.getElementById('audio-tag3').style.display = 'none';
           document.getElementById('audio-mute-tag3').style.display = 'flex';
@@ -67,7 +67,7 @@ export const MergeInfo = ({  }) => {
           document.getElementById('audio-mute-tag3').style.display = 'none';
         }} id='audio-mute-tag3' className='audio-mute-tag'>
           <img src={volMute} alt="Mute" />
-        </div>
+        </div> */}
         <a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/watch?v=4VqmGXwpLqc">
           <img src={youtube} alt="YouTube" />
         </a>

@@ -65,7 +65,7 @@ export const Intro = ({ }) => {
         {/* <div className="info-bartitle">
           Links
         </div> */}
-        <div onClick={ () => {
+        {/* <div onClick={ () => {
             document.getElementsByTagName('audio')[0].play();
             document.getElementById('audio-tag').style.display = 'none';
             document.getElementById('audio-mute-tag').style.display = 'flex';
@@ -79,14 +79,14 @@ export const Intro = ({ }) => {
             document.getElementById('audio-mute-tag').style.display = 'none';
         }} id='audio-mute-tag' className='audio-mute-tag'>
           <img src={volMute} alt="Mute"/>
-        </div>
+        </div> */}
         <img id='intro-btn' src={youtube} alt="YouTube" />
         <img id='intro-btn' src={reading} alt="Wiki" />
       </div>
     </div>
   ) : (
       <div>Not working</div>
-    );
+  );
 
   return (
     <div className='info-showin'>

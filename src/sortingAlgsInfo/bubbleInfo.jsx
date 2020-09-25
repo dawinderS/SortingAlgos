@@ -52,7 +52,7 @@ export const BubbleInfo = ({ }) => {
         <img src={mergesortCode} alt="" />
       </div>
       <div className="info-bar" id="extra-links">
-        <div onClick={() => {
+        {/* <div onClick={() => {
           document.getElementsByTagName('audio')[3].play();
           document.getElementById('audio-tag1').style.display = 'none';
           document.getElementById('audio-mute-tag1').style.display = 'flex';
@@ -66,7 +66,7 @@ export const BubbleInfo = ({ }) => {
           document.getElementById('audio-mute-tag1').style.display = 'none';
         }} id='audio-mute-tag1' className='audio-mute-tag'>
           <img src={volMute} alt="Mute" />
-        </div>
+        </div> */}
         <a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/watch?v=xli_FI7CuzA">
           <img src={youtube} alt="YouTube" />
         </a>

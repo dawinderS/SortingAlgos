@@ -52,7 +52,7 @@ export const QuickInfo = ({ }) => {
         <img src={mergesortCode} alt="" />
       </div>
       <div className="info-bar" id="extra-links">
-        <div onClick={() => {
+        {/* <div onClick={() => {
           document.getElementsByTagName('audio')[2].play();
           document.getElementById('audio-tag4').style.display = 'none';
           document.getElementById('audio-mute-tag4').style.display = 'flex';
@@ -66,7 +66,7 @@ export const QuickInfo = ({ }) => {
           document.getElementById('audio-mute-tag4').style.display = 'none';
         }} id='audio-mute-tag4' className='audio-mute-tag'>
           <img src={volMute} alt="Mute" />
-        </div>
+        </div> */}
         <a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/watch?v=Hoixgm4-P4M">
           <img src={youtube} alt="YouTube" />
         </a>

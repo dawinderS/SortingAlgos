@@ -52,7 +52,7 @@ export const SelectionInfo = ({ }) => {
         <img src={mergesortCode} alt="" />
       </div>
       <div className="info-bar" id="extra-links">
-        <div onClick={() => {
+        {/* <div onClick={() => {
           document.getElementsByTagName('audio')[5].play();
           document.getElementById('audio-tag5').style.display = 'none';
           document.getElementById('audio-mute-tag5').style.display = 'flex';
@@ -66,7 +66,7 @@ export const SelectionInfo = ({ }) => {
           document.getElementById('audio-mute-tag5').style.display = 'none';
         }} id='audio-mute-tag5' className='audio-mute-tag'>
           <img src={volMute} alt="Mute" />
-        </div>
+        </div> */}
         <a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/watch?v=g-PGLbMth_g">
           <img src={youtube} alt="YouTube" />
         </a>
