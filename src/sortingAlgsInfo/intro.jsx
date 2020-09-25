@@ -27,11 +27,11 @@ export const Intro = ({ }) => {
                 (use generate new arr button to randomize arr)
               </div>
               <div id='changefont11'>
-                - I personally recommend using large arr size and 3x speed, best to see what's happening and beautiful to watch :)
+                - I personally recommend using large arr size and 3x speed, best to see what's happening and beautiful to watch
               </div>
               <div id='changefont1'>
                 - Once you pick a sorting algo, the sorting will begin & this top navbar will contain info about that sorting algo
-                (Big O costs, Pros/Cons, what is happening, etc) --> scroll down to read more
+                (Big O costs, Pros/Cons, what is happening, etc) -- scroll down to read more
               </div>
               <div id='changefont1'>
                 - Once sorting of an array is complete, use generate new array or click on any of the arr sizes to generate a new array to sort
