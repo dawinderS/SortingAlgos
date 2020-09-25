@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/SortingAlgos/static/css/main.25609e3d.chunk.css",
-    "main.js": "/SortingAlgos/static/js/main.17489143.chunk.js",
-    "main.js.map": "/SortingAlgos/static/js/main.17489143.chunk.js.map",
+    "main.js": "/SortingAlgos/static/js/main.7da55004.chunk.js",
+    "main.js.map": "/SortingAlgos/static/js/main.7da55004.chunk.js.map",
     "runtime-main.js": "/SortingAlgos/static/js/runtime-main.59eed532.js",
     "runtime-main.js.map": "/SortingAlgos/static/js/runtime-main.59eed532.js.map",
     "static/js/2.07dab4de.chunk.js": "/SortingAlgos/static/js/2.07dab4de.chunk.js",
     "static/js/2.07dab4de.chunk.js.map": "/SortingAlgos/static/js/2.07dab4de.chunk.js.map",
     "index.html": "/SortingAlgos/index.html",
-    "precache-manifest.c82660eb4b4fa2992644c594347c6aca.js": "/SortingAlgos/precache-manifest.c82660eb4b4fa2992644c594347c6aca.js",
+    "precache-manifest.e8aa78aebadc6d6bd0312ae9534d65da.js": "/SortingAlgos/precache-manifest.e8aa78aebadc6d6bd0312ae9534d65da.js",
     "service-worker.js": "/SortingAlgos/service-worker.js",
     "static/css/main.25609e3d.chunk.css.map": "/SortingAlgos/static/css/main.25609e3d.chunk.css.map",
     "static/js/2.07dab4de.chunk.js.LICENSE.txt": "/SortingAlgos/static/js/2.07dab4de.chunk.js.LICENSE.txt",
@@ -33,6 +33,6 @@
     "static/js/runtime-main.59eed532.js",
     "static/js/2.07dab4de.chunk.js",
     "static/css/main.25609e3d.chunk.css",
-    "static/js/main.17489143.chunk.js"
+    "static/js/main.7da55004.chunk.js"
   ]
 }

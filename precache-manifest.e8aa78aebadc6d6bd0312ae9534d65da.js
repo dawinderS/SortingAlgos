@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3c14d2f8ffd6e3e9371c67f795e6442d",
+    "revision": "b74f7eeccf06ec76b5749da05119e4e2",
     "url": "/SortingAlgos/index.html"
   },
   {
-    "revision": "17c7bb5c73b08dbfb747",
+    "revision": "46b840cd59c733cfbd82",
     "url": "/SortingAlgos/static/css/main.25609e3d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SortingAlgos/static/js/2.07dab4de.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "17c7bb5c73b08dbfb747",
-    "url": "/SortingAlgos/static/js/main.17489143.chunk.js"
+    "revision": "46b840cd59c733cfbd82",
+    "url": "/SortingAlgos/static/js/main.7da55004.chunk.js"
   },
   {
     "revision": "e6676e00dcdef9973e01",
