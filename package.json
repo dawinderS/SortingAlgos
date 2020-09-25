@@ -2,7 +2,7 @@
   "name": "sorting-visuals",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dawinders.github.io/sortingVisuals/",
+  "homepage": "https://dawinders.github.io/SortingAlgos/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
