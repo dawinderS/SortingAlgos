@@ -1,5 +1,5 @@
 # Sorting Algos 101
-[See live site here](https://dawinders.github.io/SortingAlgos/)
+## [See live site here](https://dawinders.github.io/SortingAlgos/)
 
 ![sortinggif](https://user-images.githubusercontent.com/58091313/94357616-4d0c4c00-004f-11eb-9892-860324f908d9.gif)
 
